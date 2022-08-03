@@ -1,0 +1,27 @@
+
+name: shell
+
+on: [push, workflow_dispatch]
+
+jobs:
+  runshell:
+    runs-on: macos-12
+    name: Start a dragonflybsd shell
+    steps:
+    - name: Starting a dragonflybsd VM, please wait. It may take 3 minutes
+      id: shell
+      uses: vmactions/dragonflybsd-vm@main
+      with:
+        release: ${{secrets.RELEASE}}
+        prepare: |
+          pkg install -y curl
+        run: |
+          pwd
+          ls -lah
+          whoami
+          env
+          uname -a
+    - name: Sleep
+      run: sleep 5
+    - uses: neilpang/debugger-action@master
+
