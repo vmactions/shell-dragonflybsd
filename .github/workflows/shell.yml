@@ -24,12 +24,7 @@ jobs:
           "8000": "80"
         envs: 'TestingDomain TEST_PREFERRED_CHAIN TEST_ACME_Server INPUT_*'
         sync: no
-        run: |
-          pwd
-          ls -lah
-          whoami
-          env
-          uname -a
+
     - name: Sleep
       run: for i in $(seq 1 10) ; do echo $i; sleep 1; done
     - uses: neilpang/debugger-action@master
