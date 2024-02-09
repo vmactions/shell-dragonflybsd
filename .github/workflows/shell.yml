@@ -5,7 +5,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   runshell:
-    runs-on: macos-12
+    runs-on: ubuntu-latest
     name: Start a dragonflybsd shell
     steps:
     - name: Starting a dragonflybsd VM, please wait. It may take 3 minutes
