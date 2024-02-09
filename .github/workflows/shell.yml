@@ -24,8 +24,6 @@ jobs:
           "8000": "80"
         envs: 'TestingDomain TEST_PREFERRED_CHAIN TEST_ACME_Server INPUT_*'
         sync: no
-        prepare: |
-          pkg install -y curl
         run: |
           pwd
           ls -lah
